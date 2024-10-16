@@ -64,3 +64,9 @@ body {
   border-radius: 6px;
   padding: 0.6rem 0;
 }
+
+.note{
+  color: crimson;
+  font-size: 12px;
+  font-weight: 600;
+}
