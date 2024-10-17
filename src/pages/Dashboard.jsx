@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import AttachmentsCarausal from '../components/AttachmentsCarausal'
 import { IoClose } from 'react-icons/io5'
+import { user_base_url } from '../utils/base_url'
 // using tailwind here
 function Dashboard() {
     const [allUsersInfo, setAllUsersInfo] = useState([])
     const fetchAllUsers = async () => {
-        const response = await fetch('http://localhost:8000/user/getallusers')
+        const response = await fetch(`${user_base_url}getallusers`)
         const result = await response.json()
         setAllUsersInfo(result)
 
@@ -32,7 +33,7 @@ function Dashboard() {
                                 allUsersInfo?.map((user) => <div key={user?._id} className='shadow-md shadow-gray-600 p-8 my-5 flex items-center justify-between gap-5 bg-gray-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-60 border border-gray-100 overflow-hidden'>
                                     <label htmlFor='target-link' className=''>
                                         <div className='font-semibold text-5xl mb-5'>{user.name}</div>
-                                        <div className='grid gap-1 mt-2'>{user.socialMediaHandles?.map((media, index) => <a key={index} className='bg-black text-gray-50 hover:bg-gray-200 hover:text-black cursor-pointer rounded-sm p-1' href={media} id='target-link' target='_blank'>{media}</a>)}</div>
+                                        <div className='grid gap-1 mt-2'>{user.socialMediaHandles?.map((media, index) => <a key={index} className='bg-black text-gray-50 hover:bg-gray-200 hover:text-blue-500 cursor-pointer rounded-sm p-1' href={media} id='target-link' target='_blank'>{media}</a>)}</div>
                                     </label>
                                     <div>
                                         {

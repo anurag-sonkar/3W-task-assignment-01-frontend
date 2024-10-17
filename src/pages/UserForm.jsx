@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { user_base_url } from '../utils/base_url'
 import { useNavigate } from 'react-router-dom'
-
+//www.linkedin.com/in/varun-yadav-27cc3419b www.facebook.com/in/varun-yadav-27bb8819b
 function UserForm() {
     const naviagte = useNavigate()
     const [loading , setLoading] = useState(false)
@@ -17,7 +17,7 @@ function UserForm() {
 
 
         try {
-            const response = await fetch('http://localhost:8000/user/user-form', {
+            const response = await fetch(`${user_base_url}user-form`, {
                 method: 'POST',
                 body: formData,
             });
@@ -46,7 +46,7 @@ function UserForm() {
                 <h1 className='heading'>User Submission Form</h1>
                 <div className='input-div'>
                     <label htmlFor='name'>name:</label>
-                    <input type='text' name='name' id='name'  disabled={loading} required />
+                    <input type='text' name='name' id='name' disabled={loading} style={loading ? { opacity: "0.3" } : {}} required />
                 </div>
                 <div className='input-div'>
                     <label htmlFor='socialMediaHandles'>social media handle:<span className='note'> (If there is more than 1 set, separate them with spaces)</span></label>
