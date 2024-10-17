@@ -22,7 +22,7 @@ function AdminLogin() {
         
 
         if(formData.name !== '' && formData.password !== ''){
-            naigate('/')
+            naigate('/admin-dashboard')
         }else{
             alert('name & password required to login')
             return
