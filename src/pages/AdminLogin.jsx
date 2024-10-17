@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom'
 function AdminLogin() {
     const naigate = useNavigate()
     const [formData , setFormData] = useState({
-        name : "",
-        password : ""
+        name : "Anurag",
+        password : "12345600088800"
 
     })
 

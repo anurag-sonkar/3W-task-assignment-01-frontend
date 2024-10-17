@@ -1,8 +1,9 @@
 import React from 'react'
 import { user_base_url } from '../utils/base_url'
+import { useNavigate } from 'react-router-dom'
 
 function UserForm() {
-
+    const naviagte = useNavigate()
     const handleForm = async (e) => {
         e.preventDefault()
         const formData = new FormData(e.target)
@@ -30,6 +31,7 @@ function UserForm() {
 
     return (
         <div className='container'>
+                <button className='admin-btn' onClick={()=>naviagte('/admin-login')}>Admin Login</button>
             <form className='form-container' onSubmit={handleForm}>
                 <h1 className='heading'>User Submission Form</h1>
                 <div className='input-div'>
