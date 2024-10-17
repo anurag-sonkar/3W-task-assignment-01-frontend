@@ -70,3 +70,13 @@ body {
   font-size: 12px;
   font-weight: 600;
 }
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: sideways-right;
+  height: 100%;
+  text-align: center;
+  background-color: orange;
+  font-weight: 600;
+  cursor: pointer;
+}
